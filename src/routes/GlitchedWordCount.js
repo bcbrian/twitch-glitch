@@ -2,20 +2,13 @@
 
 import { css, jsx } from "@emotion/react";
 import { useRef } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { rand, replaceAll } from "../utils";
 import Glitched from "../components/Glitched";
 import { useGlitchPosition } from "../hooks/useGlitchPosition";
 
-// A custom hook that builds on useLocation to parse
-// the query string for you.
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
 export default function GlitchedWord() {
-  const query = useQuery();
   let {
     count,
     displayWord,

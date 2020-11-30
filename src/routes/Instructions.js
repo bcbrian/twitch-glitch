@@ -1,16 +1,9 @@
 /** @jsx jsx */
 
 import { css, jsx } from "@emotion/react";
-import { useLocation, Link } from "react-router-dom";
 
 import Glitched from "../components/Glitched";
 import Documentation from "../components/Documentation";
-
-// A custom hook that builds on useLocation to parse
-// the query string for you.
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
 
 // https://0kzn7.csb.app/words/Code-Sagas/center/0a0a1200/663399/ff69b4/00ffff
 

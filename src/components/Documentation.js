@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 // https://0kzn7.csb.app/words/Code-Sagas/center/0a0a1200/663399/ff69b4/00ffff
 
-const textDark = "0a0a12";
+// const textDark = "0a0a12";
 const textLight = "eaeaf2";
-const rebeccapurple = "663399";
+// const rebeccapurple = "663399";
 const hotpink = "ff69b4";
 const aqua = "00ffff";
 
@@ -59,12 +59,12 @@ export default function Documentation({
           Explanation
         </h4>
         <p>
-          {apiLink.split("/").map((piece) => {
+          {apiLink.split("/").map((piece, i) => {
             if (!piece) {
               return null;
             }
             return (
-              <Fragment>
+              <Fragment key={i}>
                 <span
                   css={css`
                     margin: 0 8px;
@@ -75,7 +75,7 @@ export default function Documentation({
                 </span>
                 <span
                   css={css`
-                    color: #${piece.includes(":") ? aqua : "fff"};
+                    color: #${piece.includes(":") ? aqua : textLight};
                   `}
                 >
                   {piece}
@@ -89,8 +89,9 @@ export default function Documentation({
             margin: 0 0 0 24px;
           `}
         >
-          {apiParams.map(({ param, description }) => (
+          {apiParams.map(({ param, description }, i) => (
             <li
+              key={i}
               css={css`
                 margin: 12px 0;
                 color: #${hotpink};
@@ -99,7 +100,7 @@ export default function Documentation({
               <span
                 css={css`
                   margin: 12px 0;
-                  color: #fff;
+                  color: #${textLight};
                 `}
               >
                 <span
